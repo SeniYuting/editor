@@ -9,10 +9,9 @@
     "body-parser": "~1.15.1",
     "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
-    "draft-convert": "^1.4.3",
     "ejs": "~2.4.1",
     "express": "~4.13.4",
-    "medium-draft": "^0.4.1",
+    "medium-editor": "^5.23.0",
     "morgan": "~1.7.0",
     "serve-favicon": "~2.3.0"
   }
