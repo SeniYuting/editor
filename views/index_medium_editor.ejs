@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="stylesheets/medium_editor/medium-editor.min.css"> <!-- Core -->
+    <link rel="stylesheet" href="stylesheets/medium_editor/themes/default.css"> <!-- or any other theme -->
+    <link rel="stylesheet" href="stylesheets/medium_editor/font-awesome-4.7.0/css/font-awesome.min.css">
+    <title>medium editor demo</title>
+
+    <script src="javascripts/jQuery/jquery-3.2.0.min.js"></script>
+    <script src="javascripts/medium_editor/medium-editor.min.js"></script>
+
+  </head>
+  <body>
+    <h1>medium editor demo</h1>
+    <p>Welcome to medium editor demo</p>
+
+    <div class="editable">
+        <p>请开始你的表演</p>
+    </div>
+    <div>
+        <button id="submit" type="button">提交</button>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            var editor = new MediumEditor('.editable', {
+                buttonLabels: 'fontawesome'
+            });
+
+            $("#submit").click(function () {
+                alert(JSON.stringify(editor));
+            });
+        });
+    </script>
+
+  </body>
+</html>
