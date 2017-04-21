@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="stylesheets/medium_editor/medium-editor.min.css"> <!-- Core -->
-    <link rel="stylesheet" href="stylesheets/medium_editor/themes/default.css"> <!-- or any other theme -->
-    <link rel="stylesheet" href="stylesheets/medium_editor/font-awesome-4.7.0/css/font-awesome.min.css">
+
     <link rel="stylesheet" href="stylesheets/Metro/metro.min.css">
     <link rel="stylesheet" href="stylesheets/Metro/metro-icons.min.css">
+
+    <script src="https://cdn.bootcss.com/react/15.4.2/react.min.js"></script>
+    <script src="https://cdn.bootcss.com/react/15.4.2/react-dom.min.js"></script>
+    <script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
     <title><%= title %></title>
 
     <script src="javascripts/jQuery/jquery-3.2.0.min.js"></script>
     <script src="javascripts/Metro/metro.min.js"></script>
-    <script src="javascripts/medium_editor/medium-editor.min.js"></script>
 
 </head>
 <body>
@@ -23,15 +24,16 @@
     </div>
 
     <div class="grid">
-        <div class="cells2" align="center">
+        <div class="cells2">
             <div class="cell">
-                <div class="editable">
-                    请开始你的表演
+                <div id="dratf_text_area">
+
                 </div>
             </div>
-            <div class="cell">
+            <br>
+            <div class="cell" align="center">
                 <button class="image-button" id="btn_submit">
-                    <span style="font-size: 18px">提交</span>
+                    <span style="font-size: 18px">此按钮什么用都没有</span>
                     <span class="icon mif-expand-less fg-white bg-black"></span>
                 </button>
             </div>
@@ -39,14 +41,7 @@
     </div>
 </div>
 
-<script>
-    $(document).ready(function () {
-        var editor = new MediumEditor('.editable', {});
+<script src="javascripts/Draft/bundle.js"></script>
 
-        $("#btn_submit").click(function () {
-            console.log(editor);
-        });
-    });
-</script>
 </body>
 </html>
