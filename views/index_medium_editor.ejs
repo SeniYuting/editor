@@ -4,34 +4,56 @@
     <link rel="stylesheet" href="stylesheets/medium_editor/medium-editor.min.css"> <!-- Core -->
     <link rel="stylesheet" href="stylesheets/medium_editor/themes/default.css"> <!-- or any other theme -->
     <link rel="stylesheet" href="stylesheets/medium_editor/font-awesome-4.7.0/css/font-awesome.min.css">
-    <title>medium editor demo</title>
+    <link rel="stylesheet" href="stylesheets/Metro/metro.min.css">
+    <link rel="stylesheet" href="stylesheets/Metro/metro-icons.min.css">
+    <title><%= title %></title>
+
+    <script src="javascripts/jQuery/jquery-3.2.0.min.js"></script>
+    <script src="javascripts/Metro/metro.min.js"></script>
 
     <script src="javascripts/jQuery/jquery-3.2.0.min.js"></script>
     <script src="javascripts/medium_editor/medium-editor.min.js"></script>
 
   </head>
   <body>
-    <h1>medium editor demo</h1>
-    <p>Welcome to medium editor demo</p>
 
-    <div class="editable">
-        <p>请开始你的表演</p>
-    </div>
-    <div>
-        <button id="submit" type="button">提交</button>
+  <div class="container">
+    <div align="center">
+      <br>
+      <h1>Welcome to <%= title %></h1>
+      <br>
     </div>
 
-    <script>
-        $(document).ready(function () {
-            var editor = new MediumEditor('.editable', {
-                buttonLabels: 'fontawesome'
-            });
 
-            $("#submit").click(function () {
-                alert(JSON.stringify(editor));
-            });
-        });
-    </script>
+    <div class="grid">
+      <div class="cells2">
+        <div class="cell">
+          <div style="font-size: 24px">
+            <span class="myEditor">
+              <p>My father’s family name being <a href="https://en.wikipedia.org/wiki/Pip_(Great_Expectations)">Pirrip</a>, and my Christian name Philip, my infant tongue could make of both names nothing longer or more explicit than Pip. So, I called myself Pip, and came to be called Pip.</p>
+            </span>
 
+          </div>
+        </div>
+        <div class="cell" align="center">
+          <button class="image-button" id="btn_submit">
+            <span style="font-size: 18px">提交</span>
+            <span class="icon mif-expand-less fg-white bg-black"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+      $(document).ready(function () {
+          var editor = new MediumEditor('.myEditor', {
+
+          });
+
+          $("#btn_submit").click(function () {
+              alert(JSON.stringify(editor));
+          });
+      });
+  </script>
   </body>
 </html>

@@ -10,15 +10,10 @@
     <script>
         $(document).ready(function () {
             $("#btn_medium_editor").click(function () {
-               $.ajax({
-                   'url': '/medium_editor',
-                   'type': 'get',
-                   'datatype': 'html',
-                   'timeout': 10000,
-                   'error': function () {
-                       alert("请求失败！");
-                   }
-               })
+                window.location.href = "/medium_editor"
+            });
+            $("#btn_draft").click(function () {
+                window.location.href = "/draft"
             });
         })
     </script>

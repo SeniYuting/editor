@@ -3,12 +3,15 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Editor-Demo' });
+    res.render('index', { title: 'Editor Demo' });
 });
 
 router.get('/medium_editor', function(req, res, next) {
+    res.render('index_medium_editor', { title: 'Medium Editor Demo' });
+});
 
-    res.redirect('index_medium_editor');
+router.get('/draft', function(req, res, next) {
+    res.render('index_draft', { title: 'Draft Demo' });
 });
 
 module.exports = router;
