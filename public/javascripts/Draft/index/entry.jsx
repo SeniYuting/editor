@@ -4,8 +4,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Editor, EditorState, RichUtils } from 'draft-js';
-import "draft-js/dist/Draft.css";
-import '../../../stylesheets/Draft/Rich.css'
 
 class MyEditor extends React.Component {
     constructor(props) {
@@ -13,12 +11,30 @@ class MyEditor extends React.Component {
         this.state = {editorState: EditorState.createEmpty()};
 
         this.focus = () => this.refs.editor.focus();
-        this.onChange = (editorState) => this.setState({editorState});
+        this.onChange = (editorState) => this._onChange(editorState);
 
         this.handleKeyCommand = (command) => this._handleKeyCommand(command);
         this.onTab = (e) => this._onTab(e);
         this.toggleBlockType = (type) => this._toggleBlockType(type);
         this.toggleInlineStyle = (style) => this._toggleInlineStyle(style);
+    }
+
+    _onChange(editorState) {
+        // var selectionState = editorState.getSelection();
+        // var anchorKey = selectionState.getAnchorKey();
+        // var currentContent = editorState.getCurrentContent();
+        // var currentContentBlock = currentContent.getBlockForKey(anchorKey);
+        // var start = selectionState.getStartOffset();
+        // var end = selectionState.getEndOffset();
+        // var selectedRowNunber = currentContentBlock.getCharacterList();
+        // var selectedRow = currentContentBlock.getText();
+        // var selectedText = currentContentBlock.getText().slice(start, end);
+        // console.log("被选择的行:", selectedRow, " 被选择的内容:", selectedText);
+        // for (var it in selectedRowNunber){
+        //     console.log(it);
+        // }
+        //console.log();
+        this.setState({editorState});
     }
 
     _handleKeyCommand(command) {
