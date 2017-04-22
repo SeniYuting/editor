@@ -17,7 +17,6 @@
     "draft-js": "^0.10.0",
     "ejs": "~2.4.1",
     "express": "~4.13.4",
-    "immutable": "^3.8.1",
     "jquery": "^3.2.1",
     "less": "^2.7.2",
     "less-loader": "^4.0.3",
