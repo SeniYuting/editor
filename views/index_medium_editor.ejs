@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="stylesheets/medium_editor/themes/default.css"> <!-- or any other theme -->
     <link rel="stylesheet" href="stylesheets/medium_editor/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="stylesheets/medium_editor/medium-editor-tables.min.css" />
+    <link rel="stylesheet" href="stylesheets/medium_editor/medium-editor-handsontable.min.css" />
+    <link rel="stylesheet" href="stylesheets/medium_editor/handsontable.full.css" />
     <link rel="stylesheet" href="stylesheets/Metro/metro.min.css">
     <link rel="stylesheet" href="stylesheets/Metro/metro-icons.min.css">
     <title><%= title %></title>
@@ -13,6 +15,8 @@
     <script src="javascripts/Metro/metro.min.js"></script>
     <script src="javascripts/medium_editor/medium-editor.min.js"></script>
     <script src="javascripts/medium_editor/medium-editor-tables.min.js"></script>
+    <script src="javascripts/medium_editor/medium-editor-handsontable.min.js"></script>
+    <script src="javascripts/medium_editor/handsontable.full.js"></script>
 
 </head>
 <body>
@@ -55,6 +59,7 @@
                 buttons: [
                     'bold',
                     'italic',
+                    'underline',
                     'h2',
                     'h3',
                     'justifyCenter',
@@ -62,11 +67,13 @@
                     'anchor',
                     'unorderedlist',
                     'orderedlist',
-                    'table'
+                    'table',
+                    'spreadsheet'
                 ]
             },
             extensions: {
-                table: new MediumEditorTable()
+                table: new MediumEditorTable(),
+                spreadsheet: new MediumEditorSpreadsheet()
             }
         });
 
