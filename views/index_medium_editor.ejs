@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="stylesheets/medium_editor/medium-editor.min.css"> <!-- Core -->
     <link rel="stylesheet" href="stylesheets/medium_editor/themes/default.css"> <!-- or any other theme -->
     <link rel="stylesheet" href="stylesheets/medium_editor/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="stylesheets/medium_editor/medium-editor-tables.min.css" />
     <link rel="stylesheet" href="stylesheets/Metro/metro.min.css">
     <link rel="stylesheet" href="stylesheets/Metro/metro-icons.min.css">
     <title><%= title %></title>
@@ -11,6 +12,7 @@
     <script src="javascripts/jQuery/jquery-3.2.0.min.js"></script>
     <script src="javascripts/Metro/metro.min.js"></script>
     <script src="javascripts/medium_editor/medium-editor.min.js"></script>
+    <script src="javascripts/medium_editor/medium-editor-tables.min.js"></script>
 
 </head>
 <body>
@@ -46,11 +48,37 @@
 
 <script>
     $(document).ready(function () {
-        var editor = new MediumEditor('.myEditor', {});
+
+        var editor = new MediumEditor('.myEditor', {
+            buttonLabels: 'fontawesome',
+            toolbar: {
+                buttons: [
+                    'bold',
+                    'italic',
+                    'h2',
+                    'h3',
+                    'justifyCenter',
+                    'quote',
+                    'anchor',
+                    'unorderedlist',
+                    'orderedlist',
+                    'table'
+                ]
+            },
+            extensions: {
+                table: new MediumEditorTable()
+            }
+        });
+
 
         $("#btn_submit").click(function () {
             console.log(editor);
         });
+
+        editor.subscribe('editableKeypress', function(data, editable) {
+            console.log(data);
+            console.log(editable);
+        })
     });
 </script>
 </body>
