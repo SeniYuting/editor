@@ -17,6 +17,8 @@
     <script src="javascripts/medium_editor/medium-editor-tables.min.js"></script>
     <script src="javascripts/medium_editor/medium-editor-handsontable.min.js"></script>
     <script src="javascripts/medium_editor/handsontable.full.js"></script>
+    <script src="javascripts/medium_editor/medium-button.min.js"></script>
+    <script src="javascripts/medium_editor/custom-html.min.js"></script>
 
 </head>
 <body>
@@ -68,21 +70,34 @@
                     'unorderedlist',
                     'orderedlist',
                     'table',
-                    'spreadsheet'
+                    'spreadsheet',
+                    'pop',
+                    "customHtml"
                 ]
             },
             extensions: {
                 table: new MediumEditorTable(),
-                spreadsheet: new MediumEditorSpreadsheet()
+                spreadsheet: new MediumEditorSpreadsheet(),
+                pop: new MediumButton({
+                    label: 'POP',
+                    action: function (html) {
+                        console.log(html);
+                        return html;
+                    }
+                }),
+                "customHtml": new CustomHtml({
+                    buttonText: "HR"
+                    , htmlToInsert: "<hr>"
+                })
             }
         });
-
 
         $("#btn_submit").click(function () {
             console.log(editor);
         });
 
-        editor.subscribe('editableKeypress', function(data, editable) {
+        editor.subscribe('focus', function(data, editable) {
+            console.log(editor.getFocusedElement());
             console.log(data);
             console.log(editable);
         })
